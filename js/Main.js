@@ -40,7 +40,7 @@ class Main{
 
     checkSolution(){
         if (this.game == null || this.game === undefined) return;
-
+        alert("Sorry, I'm a bit busy now. I'll check your awesome solution later. Maybe. \nMy thanks to you.")
     }
 
     showMenu(){

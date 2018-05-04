@@ -81,7 +81,19 @@ class ViewController{
         saveEl.classList.add("saveGameButton");
         saveEl.classList.add("navButton");
         saveEl.addEventListener("click", () => this.main.saveGame());
+        let checkEl = document.createElement("div");
+        checkEl.classList.add("checkSolutionButton");
+        checkEl.classList.add("navButton");
+        checkEl.addEventListener("click", () => this.main.checkSolution());
         navMenu.appendChild(saveEl);
+        navMenu.appendChild(checkEl);
+
+    }
+
+
+    //ABOUT
+
+    showAbout(){
 
     }
 

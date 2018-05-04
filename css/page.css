@@ -17,6 +17,7 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+    font-size: x-large;
 }
 .page section {
 	display: flex;
@@ -154,6 +155,10 @@ body{
 
 .page section nav .backButton::before{
     content: 'Back';
+}
+
+.page section nav .checkSolutionButton::before{
+    content: 'Check solution';
 }
 
 
