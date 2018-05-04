@@ -17,6 +17,7 @@ class StateHolder{
         if (game !== undefined)
             try {
                 localStorage.setItem("savedGame", JSON.stringify(GameFactory.gameCopy(game)));
+                alert("Game saved. c: Be grateful.");
             } catch (error){
             console.log("Unable to save game:" + error);
             console.log(game);

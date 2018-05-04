@@ -65,16 +65,20 @@ class ViewController{
     }
 
     drawGameMenu(){
-        let navEl = document.querySelector('nav');
-        let navMenu = document.createElement("div");
-        navMenu.classList.add("navMenu");
+        let navMenu = document.querySelector('.navMenu');
+        if (navMenu == null){
+            let navEl = document.querySelector('nav');
+            navMenu = document.createElement("div");
+            navMenu.classList.add("navMenu");
+            navEl.appendChild(navMenu);
+        }
         navMenu.innerHTML = '';
         let saveEl = document.createElement("div");
         saveEl.classList.add("saveGameButton");
         saveEl.classList.add("navButton");
         saveEl.addEventListener("click", () => this.main.saveGame());
         navMenu.appendChild(saveEl);
-        navEl.appendChild(navMenu);
+
     }
 
 
