@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nonograms</title>
+    <link rel="stylesheet" href="./css/page.css">
+    <link rel="stylesheet" href="./css/game.css">
+
+    <script src="./js/Facade.js"></script>
+    <script src="./js/Main.js"></script>
+    <script src="./js/StateHolder.js"></script>
+    <script src="./js/ViewController.js"></script>
+    <script src="./js/GameFactory.js"></script>
+    <script src="./js/Model.js"></script>
+    <script src="./js/Game.js"></script>
+    <script src="./js/GameDrawer.js"></script>
+    <script src="./js/FileManager.js"></script>
+
+
+
+
+</head>
+<body>
+<div class="page">
+    <header>
+        <!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" clip-path="url(#clip)" width="50px" height="50px"><defs><clipPath id="clip" clipPathUnits="objectBoundingBox"><rect x="0" y="0" width="256" height="256"/></clipPath></defs><rect x="0" y="0" width="256" height="256" fill="rgb(254, 254, 254)"/><path d="M-50,142L254,175L172,12Z" fill="rgb(86, 116, 0)" fill-opacity="0.74"/><path d="M159,237L121,144L88,234Z" fill="rgb(82, 85, 0)" fill-opacity="0.59"/><path d="M120,-22L173,62L259,38Z" fill="rgb(253, 253, 251)" fill-opacity="0.91"/><path d="M27,182L-68,62L24,93Z" fill="rgb(253, 254, 250)" fill-opacity="0.87"/><path d="M137,215L97,236L56,231Z" fill="rgb(85, 142, 0)" fill-opacity="0.75"/><path d="M45,73L92,30L257,119Z" fill="rgb(93, 129, 4)" fill-opacity="0.71"/><path d="M190,179L258,185L245,135Z" fill="rgb(252, 252, 252)" fill-opacity="0.96"/><path d="M119,223L117,171L11,204Z" fill="rgb(254, 254, 254)" fill-opacity="0.89"/><path d="M127,230L182,238L178,222Z" fill="rgb(70, 128, 0)" fill-opacity="0.67"/><path d="M96,157L56,163L41,150Z" fill="rgb(21, 52, 0)" fill-opacity="0.50"/><path d="M124,188L77,119L162,121Z" fill="rgb(38, 12, 0)" fill-opacity="0.41"/><path d="M138,69L210,125L107,98Z" fill="rgb(44, 55, 1)" fill-opacity="0.61"/><path d="M158,173L199,57L242,125Z" fill="rgb(98, 133, 9)" fill-opacity="0.55"/><path d="M18,119L19,140L104,84Z" fill="rgb(130, 166, 35)" fill-opacity="0.80"/><path d="M229,108L222,84L258,124Z" fill="rgb(208, 222, 166)" fill-opacity="0.99"/><path d="M41,148L90,132L57,116Z" fill="rgb(152, 208, 7)" fill-opacity="0.65"/><path d="M157,158L119,153L166,196Z" fill="rgb(255, 250, 255)" fill-opacity="0.57"/><path d="M177,235L130,218L186,227Z" fill="rgb(108, 160, 17)" fill-opacity="0.61"/><path d="M127,14L120,45L152,32Z" fill="rgb(255, 255, 251)" fill-opacity="0.47"/><path d="M101,228L144,199L133,235Z" fill="rgb(87, 108, 0)" fill-opacity="0.70"/><path d="M144,27L146,80L156,15Z" fill="rgb(169, 197, 88)" fill-opacity="0.53"/><path d="M56,90L47,100L39,89Z" fill="rgb(255, 255, 255)" fill-opacity="0.44"/><path d="M72,175L-14,110L3,233Z" fill="rgb(254, 254, 254)" fill-opacity="0.91"/><path d="M241,96L159,100L219,165Z" fill="rgb(111, 149, 19)" fill-opacity="0.61"/><path d="M88,137L70,148L105,157Z" fill="rgb(47, 56, 11)" fill-opacity="0.60"/><path d="M107,76L209,66L165,51Z" fill="rgb(122, 153, 27)" fill-opacity="0.66"/><path d="M144,219L118,222L130,158Z" fill="rgb(108, 32, 0)" fill-opacity="0.49"/><path d="M192,129L135,160L136,133Z" fill="rgb(54, 65, 21)" fill-opacity="0.70"/><path d="M1,85L67,80L46,60Z" fill="rgb(247, 248, 245)" fill-opacity="0.83"/><path d="M145,56L171,33L131,45Z" fill="rgb(146, 184, 37)" fill-opacity="0.49"/><path d="M100,27L127,47L88,75Z" fill="rgb(161, 207, 50)" fill-opacity="0.55"/><path d="M142,168L141,224L273,167Z" fill="rgb(254, 254, 254)" fill-opacity="0.75"/><path d="M100,105L143,137L158,108Z" fill="rgb(136, 183, 1)" fill-opacity="0.58"/><path d="M55,72L57,53L71,51Z" fill="rgb(150, 200, 4)" fill-opacity="0.52"/><path d="M204,75L213,67L199,69Z" fill="rgb(255, 255, 255)" fill-opacity="0.49"/><path d="M244,145L243,132L229,142Z" fill="rgb(253, 251, 255)" fill-opacity="0.53"/><path d="M217,100L264,72L211,83Z" fill="rgb(253, 252, 255)" fill-opacity="0.67"/><path d="M110,12L20,30L98,36Z" fill="rgb(254, 254, 253)" fill-opacity="0.88"/><path d="M109,166L114,114L128,201Z" fill="rgb(73, 27, 1)" fill-opacity="0.57"/><path d="M165,224L148,157L230,232Z" fill="rgb(254, 254, 253)" fill-opacity="1.00"/><path d="M56,90L57,104L87,91Z" fill="rgb(50, 72, 10)" fill-opacity="0.49"/><path d="M75,50L83,24L61,47Z" fill="rgb(249, 249, 242)" fill-opacity="0.53"/><path d="M67,231L153,235L144,219Z" fill="rgb(73, 148, 0)" fill-opacity="0.62"/><path d="M61,159L121,192L120,212Z" fill="rgb(253, 253, 253)" fill-opacity="0.93"/><path d="M60,106L24,124L20,110Z" fill="rgb(183, 229, 39)" fill-opacity="0.50"/><path d="M212,90L183,85L215,72Z" fill="rgb(66, 86, 32)" fill-opacity="0.43"/><path d="M219,137L198,153L185,133Z" fill="rgb(180, 234, 11)" fill-opacity="0.54"/><path d="M151,236L224,316L185,232Z" fill="rgb(252, 253, 252)" fill-opacity="1.00"/><path d="M29,93L31,105L17,100Z" fill="rgb(255, 254, 255)" fill-opacity="0.63"/><path d="M76,35L112,75L79,93Z" fill="rgb(96, 136, 15)" fill-opacity="0.57"/></svg>-->
+
+        <!--
+            - 100% width
+            - 200px height
+            - center content horizontally and vertically
+        -->
+        Nonograms
+        <!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" clip-path="url(#clip)" width="50px" height="50px"><defs><clipPath id="clip" clipPathUnits="objectBoundingBox"><rect x="0" y="0" width="256" height="256"/></clipPath></defs><rect x="0" y="0" width="256" height="256" fill="rgb(254, 254, 254)"/><path d="M-50,142L254,175L172,12Z" fill="rgb(86, 116, 0)" fill-opacity="0.74"/><path d="M159,237L121,144L88,234Z" fill="rgb(82, 85, 0)" fill-opacity="0.59"/><path d="M120,-22L173,62L259,38Z" fill="rgb(253, 253, 251)" fill-opacity="0.91"/><path d="M27,182L-68,62L24,93Z" fill="rgb(253, 254, 250)" fill-opacity="0.87"/><path d="M137,215L97,236L56,231Z" fill="rgb(85, 142, 0)" fill-opacity="0.75"/><path d="M45,73L92,30L257,119Z" fill="rgb(93, 129, 4)" fill-opacity="0.71"/><path d="M190,179L258,185L245,135Z" fill="rgb(252, 252, 252)" fill-opacity="0.96"/><path d="M119,223L117,171L11,204Z" fill="rgb(254, 254, 254)" fill-opacity="0.89"/><path d="M127,230L182,238L178,222Z" fill="rgb(70, 128, 0)" fill-opacity="0.67"/><path d="M96,157L56,163L41,150Z" fill="rgb(21, 52, 0)" fill-opacity="0.50"/><path d="M124,188L77,119L162,121Z" fill="rgb(38, 12, 0)" fill-opacity="0.41"/><path d="M138,69L210,125L107,98Z" fill="rgb(44, 55, 1)" fill-opacity="0.61"/><path d="M158,173L199,57L242,125Z" fill="rgb(98, 133, 9)" fill-opacity="0.55"/><path d="M18,119L19,140L104,84Z" fill="rgb(130, 166, 35)" fill-opacity="0.80"/><path d="M229,108L222,84L258,124Z" fill="rgb(208, 222, 166)" fill-opacity="0.99"/><path d="M41,148L90,132L57,116Z" fill="rgb(152, 208, 7)" fill-opacity="0.65"/><path d="M157,158L119,153L166,196Z" fill="rgb(255, 250, 255)" fill-opacity="0.57"/><path d="M177,235L130,218L186,227Z" fill="rgb(108, 160, 17)" fill-opacity="0.61"/><path d="M127,14L120,45L152,32Z" fill="rgb(255, 255, 251)" fill-opacity="0.47"/><path d="M101,228L144,199L133,235Z" fill="rgb(87, 108, 0)" fill-opacity="0.70"/><path d="M144,27L146,80L156,15Z" fill="rgb(169, 197, 88)" fill-opacity="0.53"/><path d="M56,90L47,100L39,89Z" fill="rgb(255, 255, 255)" fill-opacity="0.44"/><path d="M72,175L-14,110L3,233Z" fill="rgb(254, 254, 254)" fill-opacity="0.91"/><path d="M241,96L159,100L219,165Z" fill="rgb(111, 149, 19)" fill-opacity="0.61"/><path d="M88,137L70,148L105,157Z" fill="rgb(47, 56, 11)" fill-opacity="0.60"/><path d="M107,76L209,66L165,51Z" fill="rgb(122, 153, 27)" fill-opacity="0.66"/><path d="M144,219L118,222L130,158Z" fill="rgb(108, 32, 0)" fill-opacity="0.49"/><path d="M192,129L135,160L136,133Z" fill="rgb(54, 65, 21)" fill-opacity="0.70"/><path d="M1,85L67,80L46,60Z" fill="rgb(247, 248, 245)" fill-opacity="0.83"/><path d="M145,56L171,33L131,45Z" fill="rgb(146, 184, 37)" fill-opacity="0.49"/><path d="M100,27L127,47L88,75Z" fill="rgb(161, 207, 50)" fill-opacity="0.55"/><path d="M142,168L141,224L273,167Z" fill="rgb(254, 254, 254)" fill-opacity="0.75"/><path d="M100,105L143,137L158,108Z" fill="rgb(136, 183, 1)" fill-opacity="0.58"/><path d="M55,72L57,53L71,51Z" fill="rgb(150, 200, 4)" fill-opacity="0.52"/><path d="M204,75L213,67L199,69Z" fill="rgb(255, 255, 255)" fill-opacity="0.49"/><path d="M244,145L243,132L229,142Z" fill="rgb(253, 251, 255)" fill-opacity="0.53"/><path d="M217,100L264,72L211,83Z" fill="rgb(253, 252, 255)" fill-opacity="0.67"/><path d="M110,12L20,30L98,36Z" fill="rgb(254, 254, 253)" fill-opacity="0.88"/><path d="M109,166L114,114L128,201Z" fill="rgb(73, 27, 1)" fill-opacity="0.57"/><path d="M165,224L148,157L230,232Z" fill="rgb(254, 254, 253)" fill-opacity="1.00"/><path d="M56,90L57,104L87,91Z" fill="rgb(50, 72, 10)" fill-opacity="0.49"/><path d="M75,50L83,24L61,47Z" fill="rgb(249, 249, 242)" fill-opacity="0.53"/><path d="M67,231L153,235L144,219Z" fill="rgb(73, 148, 0)" fill-opacity="0.62"/><path d="M61,159L121,192L120,212Z" fill="rgb(253, 253, 253)" fill-opacity="0.93"/><path d="M60,106L24,124L20,110Z" fill="rgb(183, 229, 39)" fill-opacity="0.50"/><path d="M212,90L183,85L215,72Z" fill="rgb(66, 86, 32)" fill-opacity="0.43"/><path d="M219,137L198,153L185,133Z" fill="rgb(180, 234, 11)" fill-opacity="0.54"/><path d="M151,236L224,316L185,232Z" fill="rgb(252, 253, 252)" fill-opacity="1.00"/><path d="M29,93L31,105L17,100Z" fill="rgb(255, 254, 255)" fill-opacity="0.63"/><path d="M76,35L112,75L79,93Z" fill="rgb(96, 136, 15)" fill-opacity="0.57"/></svg>-->
+
+    </header>
+    <section>
+        <!--
+            - 100% width
+            - height is the rest of the page (viewport height - header - footer)
+              or more if there is lots of content inside
+            - 400px min height
+        -->
+        <nav>
+            <!--
+                - 1em padding
+                - content width
+                - height the rest
+            -->
+
+
+        </nav>
+        <main>
+
+        </main>
+
+    </section>
+    <footer>
+        <!--
+            - 100% width
+            - 200px height
+            - footer is sticky
+            - center content horizontally and vertically
+        -->
+        Footer
+    </footer>
+</div>
+
+</body>
+
+<script>
+    Facade.startDefaultGame();
+</script>
+</html>

@@ -1,0 +1,151 @@
+
+
+.frame {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid grey;
+    border-bottom: 1px solid grey;
+    border-left: 2px solid grey;
+    border-right: 1px solid grey;
+
+}
+
+.gameFrame {
+    display: flex;
+    flex-flow: column  wrap-reverse;
+    margin: auto;
+    /*border: 2px solid grey;*/
+    justify-content: center;
+    align-content: center;
+}
+
+.upperPlate{
+    display: flex;
+    flex-flow: row-reverse  wrap-reverse;
+}
+.bottomPlate{
+    display: flex;
+    flex-flow: row-reverse  wrap-reverse;
+}
+
+.row{
+    display: flex;
+    border-bottom: 1px solid grey;
+}
+
+.square{
+    display: flex;
+    height: 1.5em;
+    width: 1.5em;
+    background-color: #fffeee;
+    border-right: 1px solid grey;
+
+    transition: background-color 0.15s ease-out;
+}
+
+.frame .marked{
+    background-color: #111222;
+}
+
+.square:nth-of-type(5n){
+    border-right: 1px solid black;
+}
+
+.row:nth-of-type(5n){
+    border-bottom: 1px solid black;
+}
+
+
+/*.square + .fifthX{*/
+    /*border-right: 1px solid grey;*/
+
+/*}*/
+/*.square + .fifthY{*/
+    /*border-bottom: 1px solid grey;*/
+
+/*}*/
+
+
+/*DECLARATIONS*/
+
+.xDeclaration{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    width: 1.5em;
+    border-right: 1px solid grey;
+
+    background-color: #fffeee;
+
+}
+.xDeclarationsBlock{
+    display: flex;
+    border-right: 1px solid grey;
+    border-top: 2px solid grey;
+    border-left: 2px solid grey;
+}
+
+.yDeclaration{
+    display: flex;
+    height: 1.5em;
+    border-bottom: 1px solid grey;
+
+    background-color: #fffeee;
+    justify-content: flex-end;
+
+}
+.yDeclarationsBlock{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid grey;
+    border-top: 2px solid grey;
+    border-left: 2px solid grey;
+
+
+
+    align-self: flex-end;
+}
+
+div .declarationSquare{
+    display: flex;
+    height: 1.5em;
+    width: 1.5em;
+
+
+    justify-content: center;
+    align-content: center;
+
+    transition: background-color 0.15s ease-out;
+    -webkit-transition: background-image 0.2s ease-in-out;
+}
+
+.crossed{
+    -webkit-transition: background-image 0.5s ease-in-out;
+    transition: background-image 0.5s ease-in-out;
+    background-image: url("../img/cross.gif");
+}
+
+.yDeclaration:nth-of-type(5n){
+    border-bottom: 1px solid black;
+
+}
+
+.xDeclaration:nth-of-type(5n){
+    border-right: 1px solid black;
+}
+
+
+
+/*PSEUDO*/
+
+svg{
+    transition: transform 1s ease-in-out;
+}
+
+svg:hover{
+    transform: rotateY(180deg);
+}
+
+div .declarationSquare:hover, div .square:hover:not(.marked){
+    background-color: #eeeccc;
+}

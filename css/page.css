@@ -1,0 +1,220 @@
+*{
+    font-family: Papyrus, sans-serif;
+}
+
+body{
+	margin: 0;
+}
+
+.page {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+.page header {
+	background: lightblue;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.page section {
+	display: flex;
+	min-height: 200px;
+	flex-grow: 1;
+	width: available;
+}
+.page section nav {
+    display: flex;
+	background: lightsalmon;
+    flex-direction: column;
+	white-space: nowrap;
+	min-width: 20vh;
+}
+
+.page section nav .svgTree{
+	width: inherit;
+	height: available;
+    margin: 2vh;
+	flex-grow: 0;
+}
+
+.page section nav .navMenu{
+    display: flex;
+    margin: 1em;
+    flex-direction: column;
+    align-items: center;
+    width: inherit;
+    height: auto;
+    flex-grow: 1;
+}
+.page section nav .navButton{
+    display: flex;
+    font-size: x-large;
+    align-content: center;
+    justify-content: center;
+    margin: 2vh;
+    min-height: 10vh;
+    min-width: 15vh;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.page section main {
+	background: lightgreen;
+	display: flex;
+	min-height: 95vh;
+	min-width: 100vh;
+	width: 100%;
+    height: 100%;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	align-content: space-between;
+    padding: 3vh;
+	/*justify-content: center;*/
+}
+
+.page section main .menu{
+	background: lightgreen;
+	display: flex;
+	height: inherit;
+	width: inherit;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	align-content: space-between;
+	/*justify-content: center;*/
+}
+
+.page section main .button{
+	display: flex;
+    font-size: x-large;
+	align-items: center;
+	justify-content: center;
+	margin: 2vh;
+    padding: 2vh;
+	min-height: 10vh;
+	min-width: 20vh;
+	transition: background-color 0.15s ease-in-out;
+}
+
+
+.page section main .levels{
+    display: flex;
+    height: inherit;
+    width: inherit;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    align-content: space-between;
+    /*justify-content: center;*/
+}
+
+.page section main .card{
+    display: flex;
+    font-size: x-large;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2vh;
+    padding: 2vh;
+    min-height: 20vh;
+    min-width: 20vh;
+}
+
+.page section main .button, .page section main .card{
+    background-color: #eeeccc;
+    transition: background-color 0.15s ease-out;
+}
+
+.page section main .button:hover, .page section main .card:hover{
+	background-color: #dddbbb;
+}
+
+.page section main .startButton::before{
+	content: 'Start';
+}
+
+.page section main .continueButton::before{
+	content: 'Continue';
+}
+
+.page section main .optionsButton::before{
+	content: 'Options';
+}
+
+.page section main .aboutButton::before{
+	content: 'About';
+}
+
+.page section nav .saveGameButton::before{
+    content: 'Save Game';
+}
+
+.page section nav .backButton::before{
+    content: 'Back';
+}
+
+
+/*.page section main .images {*/
+	/*perspective: 500px;*/
+	/*display: flex;*/
+	/*justify-content: center;*/
+	/*align-items: center;*/
+	/*flex-wrap: wrap;*/
+
+/*}*/
+/*.page section main .images img {*/
+	/*margin: 5px;*/
+/*}*/
+.page section aside {
+	background: lightgoldenrodyellow;
+	width: 200px;
+	padding: 1em;
+	display: flex;
+	justify-content: center;
+}
+.page footer {
+	display: flex;
+	background: lightcoral;
+	min-height: 100px;
+	justify-content: center;
+	align-items: center;
+}
+
+#ololo{
+	/*background-color: aquamarine;*/
+	/*height: 50px;*/
+	/*width: 50px;*/
+	/*transform-origin: 60% 60%;*/
+	/*transform: rotate(10deg) translateX(20px) translateY(-20px) rotateZ(20deg);*/
+
+}
+@media screen and (max-width: 700px){
+	.page section{
+		flex-direction: column;
+	}
+    .page section nav{
+        height: 20vh;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .page section nav .navMenu{
+        flex-direction: row;
+        height: auto;
+    }
+    .page section nav .svgTree{
+        width: 20vh;
+        height: auto;
+        margin: 0.5em;
+        flex-grow: 0;
+    }
+
+
+	.page section aside{
+		width: 100%;
+	}
+}
+
+
