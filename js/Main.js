@@ -31,6 +31,7 @@ class Main{
 
     continueGame(){
         const savedGame = this.stateHolder.loadGame();
+        if(!savedGame) return;
         this.game = GameFactory.getGameFromSave(savedGame);
         this.stateHolder.setState("game");
         this.view.drawGame(this.game);
@@ -40,7 +41,7 @@ class Main{
 
     checkSolution(){
         if (this.game == null || this.game === undefined) return;
-        alert("Sorry, I'm a bit busy now. I'll check your awesome solution later. Maybe. \nMy thanks to you.")
+        alert("Sorry, I'm a bit busy now. I'll check your ingenious solution later. Probably. \nMy thanks to you.")
     }
 
     showMenu(){

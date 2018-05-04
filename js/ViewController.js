@@ -130,6 +130,9 @@ class ViewController{
         this.appendSvgByPath(svgContainer, "M168,172L41,54L208,58Z", "rgb(81, 112, 0)", "0.57");
         this.appendSvgByPath(svgContainer, "M19,118L63,166L36,87Z", "rgb(127, 161, 40)", "0.89");
         // this.appendSvgByPath(svgContainer, "M357,185L243,147L174,180Z", "rgb(254, 254, 254)","0.93");
+        svgContainer.addEventListener("click", () => {
+            location.hash = "menu";
+        });
         return svgContainer;
     }
 

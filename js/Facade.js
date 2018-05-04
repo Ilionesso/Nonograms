@@ -1,6 +1,6 @@
 
 class Facade{
-    static startDefaultGame(){
+    static start(){
         const main = new Main();
         main.showPage();
         main.showMenu();

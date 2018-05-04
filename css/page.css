@@ -30,7 +30,7 @@ body{
 	background: lightsalmon;
     flex-direction: column;
 	white-space: nowrap;
-	min-width: 20vh;
+	min-width: 9em;
 }
 
 .page section nav .svgTree{
@@ -52,13 +52,17 @@ body{
 .page section nav .navButton{
     display: flex;
     font-size: x-large;
-    align-content: center;
+    align-items: center;
     justify-content: center;
-    margin: 2vh;
+    flex-wrap: wrap;
+    margin: 1vh;
+    padding: 1vh;
+    width: inherit;
     min-height: 10vh;
     min-width: 15vh;
     transition: background-color 0.15s ease-in-out;
 }
+
 
 .page section main {
 	background: lightgreen;
@@ -92,10 +96,10 @@ body{
     font-size: x-large;
 	align-items: center;
 	justify-content: center;
-	margin: 2vh;
-    padding: 2vh;
-	min-height: 10vh;
-	min-width: 20vh;
+	margin: 0.5em;
+    padding: 0.5em;
+	min-height: 2.5em;
+	min-width: 7em;
 	transition: background-color 0.15s ease-in-out;
 }
 
@@ -133,6 +137,10 @@ body{
 	background-color: #dddbbb;
 }
 
+.page section nav .navButton:hover{
+    background-color: #FFB18B;
+}
+
 .page section main .startButton::before{
 	content: 'Start';
 }
@@ -150,7 +158,7 @@ body{
 }
 
 .page section nav .saveGameButton::before{
-    content: 'Save Game';
+    content: "Save Game";
 }
 
 .page section nav .backButton::before{

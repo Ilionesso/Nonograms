@@ -1,11 +1,16 @@
 class StateHolder{
 
     constructor(main){
+        this.stateHolder = this;
         this.main = main;
         window.addEventListener("hashchange", () =>{
             console.log(location.hash);
             main.doByHash(location.hash)
         });
+    }
+
+    static getStateHolder(){
+        return this.stateHolder;
     }
 
     setState(strState) {
@@ -20,15 +25,23 @@ class StateHolder{
                 alert("Game saved. c: Be grateful.");
             } catch (error){
             console.log("Unable to save game:" + error);
-            console.log(game);
             alert("Unable to save game. Sorry. :/");
             }
+    }
+
+    static eraseGame(){
+        try {
+            localStorage.removeItem("savedGame");
+        } catch (error){
+            console.log("Unable to erase game:" + error);
+        }
     }
 
     loadGame(){
         try {
             const savedGame = localStorage.getItem("savedGame");
             if (!savedGame){
+                alert("There is no saved game. o_O");
                 console.log("There is no saved game.");
                 return null;
             }
