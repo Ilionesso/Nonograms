@@ -33,6 +33,8 @@ class ViewController{
         this.buttons.continueButton.addEventListener("click", () => this.main.continueGame());
         this.buttons.optionsButton.addEventListener("click", () => this.main.showOptions);
         this.buttons.aboutButton.addEventListener("click", () => this.main.showAbout);
+
+        this.clearNavMenu();
     }
 
     // LEVELS
@@ -52,6 +54,7 @@ class ViewController{
         });
         mainEl.innerHTML = ``;
         mainEl.appendChild(levelCards);
+        this.clearNavMenu();
     }
 
     //GAME
@@ -63,6 +66,7 @@ class ViewController{
         this.gameDrawer.drawGameFrame();
         this.drawGameMenu();
     }
+
 
     drawGameMenu(){
         let navMenu = document.querySelector('.navMenu');
@@ -82,13 +86,16 @@ class ViewController{
     }
 
 
-
-    //COMMON PAGE ELEMENTS
+    //COMMON PAGE ELEMENTS AND TOOLS
     showPage(){
         this.showSvgs();
     }
 
-
+    clearNavMenu(){
+        let navMenu = document.querySelector('.navMenu');
+        if (navMenu)
+            navMenu.innerHTML = '';
+    }
 
     showSvgs(){
         let nav = document.querySelector("nav");
