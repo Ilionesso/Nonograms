@@ -49,6 +49,17 @@ class Main{
         this.stateHolder.setState("menu");
     }
 
+    showAbout(){
+        this.view.showAbout();
+        this.stateHolder.setState("about");
+    }
+
+    showOptions(){
+        this.view.showOptions();
+        this.stateHolder.setState("options");
+    }
+
+
     setLevels(levels){
         this.levels = levels;
     }
@@ -60,6 +71,9 @@ class Main{
                 break;
             case("#levels"):
                 this.chooseLevel();
+                break;
+            case("#options"):
+                this.showOptions();
                 break;
         }
 

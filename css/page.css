@@ -128,6 +128,55 @@ body{
     min-width: 20vh;
 }
 
+.page section main .sectionPlate{
+    display: flex;
+    font-size: large;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5vh;
+    padding: 5vh;
+    background-color: #eeeccc;
+    min-height: inherit;
+    min-width: inherit;
+}
+
+.page section main .sectionPlate{
+    display: flex;
+    font-size: large;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.page section main .sectionPlate form{
+    display: flex;
+    font-size: large;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: inherit;
+}
+
+.page section main .sectionPlate div{
+    margin: 0.3em;
+    width: 100%;
+}
+
+.page section main .sectionPlate *{
+    font-size: large;
+}
+
+.page section main .sectionPlate input, .page section main .sectionPlate textarea{
+    font-family: sans-serif;
+    width: 100%;
+}
+
+/*.page section main .sectionPlate input:nth-child(2n) {*/
+    /*display: flex;*/
+    /*flex-basis: 100%;*/
+/*}*/
+
 .page section main .button, .page section main .card{
     background-color: #eeeccc;
     transition: background-color 0.15s ease-out;

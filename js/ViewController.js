@@ -31,8 +31,8 @@ class ViewController{
 
         this.buttons.startButton.addEventListener("click", () => this.main.chooseLevel());
         this.buttons.continueButton.addEventListener("click", () => this.main.continueGame());
-        this.buttons.optionsButton.addEventListener("click", () => this.main.showOptions);
-        this.buttons.aboutButton.addEventListener("click", () => this.main.showAbout);
+        this.buttons.optionsButton.addEventListener("click", () => this.main.showOptions());
+        this.buttons.aboutButton.addEventListener("click", () => this.main.showAbout());
 
         this.clearNavMenu();
     }
@@ -94,8 +94,40 @@ class ViewController{
     //ABOUT
 
     showAbout(){
-
+        // let mainEl = document.querySelector('main');
+        // mainEl.innerHTML = '';
+        // let sectionPlate = document.createElement("div");
+        // sectionPlate.classList.add("sectionPlate");
+        // mainEl.appendChild(sectionPlate);
+        // sectionPlate.innerHTML= `
+        // <p>
+        //
+        //
+        // `
     }
+
+    //OPTIONS
+
+    showOptions(){
+        let mainEl = document.querySelector('main');
+        mainEl.innerHTML = '';
+        let sectionPlate = document.createElement("div");
+        sectionPlate.classList.add("sectionPlate");
+        mainEl.appendChild(sectionPlate);
+        sectionPlate.innerHTML= `
+        <p>There are no any options. There is just the endless entropy and despair.
+        I will die. You will die. Humanity and Universe will disappear as well.
+        You can just play this game. Or send us a feedback.</p>
+        <form name="myForm"  onsubmit="alert('Thank you fo your feedback! c:');" method="post">
+            <div><label for="name">Name:</label><input type="text" placeholder="The Douchebag" name="name" required></div>
+            <div><label for="email">E-mail:</label><input type="text" name="email" pattern="[^@\\s]+@[^@\\s]+\\.[^@\\s]+" title="Invalid email address" placeholder="asdasd@asd.asd" required></div>
+            <div><label for="pwd">Password:</label> <input type="password" name="pwd"  pattern="(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{15,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 15 or more characters" required></div>
+            <div><label for="feedback">Feedback:</label>  <textarea rows="3" name = "feedback" disabled>Thank you! Your application is awesome!</textarea></div>
+            <input type="submit" value="Submit">
+        </form>
+        `
+    }
+
 
 
     //COMMON PAGE ELEMENTS AND TOOLS
@@ -122,17 +154,11 @@ class ViewController{
 
         this.appendSvgByPath(svgContainer, "M103,10L360,176L-4,154Z", "rgb(98, 127, 16)", "0.78");
         this.appendSvgByPath(svgContainer, "M107,113L161,236L118,235Z", "rgb(86, 75, 4)", "0.72");
-        // this.appendSvgByPath(svgContainer, "M54,26L127,43L226,-33Z","rgb(252, 253, 248)", "0.94");
-        // this.appendSvgByPath(svgContainer, "M258,63L214,180L275,167Z", "rgb(251, 251, 250)", "0.96");
         this.appendSvgByPath(svgContainer, "M139,237L192,230L151,221Z", "rgb(84, 139, 13)", "0.81");
-        // this.appendSvgByPath(svgContainer, "M-20,104L33,241L49,158Z", "rgb(254, 254, 254)", "0.97");
         this.appendSvgByPath(svgContainer, "M52,232L141,213L120,236Z","rgb(87, 136, 5)", "0.82");
         this.appendSvgByPath(svgContainer, "M168,172L41,54L208,58Z", "rgb(81, 112, 0)", "0.57");
         this.appendSvgByPath(svgContainer, "M19,118L63,166L36,87Z", "rgb(127, 161, 40)", "0.89");
-        // this.appendSvgByPath(svgContainer, "M357,185L243,147L174,180Z", "rgb(254, 254, 254)","0.93");
-        svgContainer.addEventListener("click", () => {
-            location.hash = "menu";
-        });
+        svgContainer.addEventListener("click", () => location.hash = "menu");
         return svgContainer;
     }
 
