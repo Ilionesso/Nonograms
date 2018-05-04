@@ -134,20 +134,14 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 5vh;
-    padding: 5vh;
+    margin: 5em;
+    padding: 1em;
     background-color: #eeeccc;
     min-height: inherit;
     min-width: inherit;
 }
 
-.page section main .sectionPlate{
-    display: flex;
-    font-size: large;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
+
 .page section main .sectionPlate form{
     display: flex;
     font-size: large;

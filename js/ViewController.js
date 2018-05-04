@@ -115,11 +115,11 @@ class ViewController{
         sectionPlate.classList.add("sectionPlate");
         mainEl.appendChild(sectionPlate);
         sectionPlate.innerHTML= `
-        <p>There are no any options. There is just the endless entropy and despair.
-        I will die. You will die. Humanity and Universe will disappear as well.
+        <p>There are no any options. There is just the endless entropy and despair.<br>
+        I will die. <br>You will die. <br>Humanity and Universe will disappear as well.<br>
         You can just play this game. Or send us a feedback.</p>
         <form name="myForm"  onsubmit="alert('Thank you fo your feedback! c:');" method="post">
-            <div><label for="name">Name:</label><input type="text" placeholder="The Douchebag" name="name" required></div>
+            <div><label for="name">Name:</label><input type="text" placeholder="Mr. Douchebag" name="name" required></div>
             <div><label for="email">E-mail:</label><input type="text" name="email" pattern="[^@\\s]+@[^@\\s]+\\.[^@\\s]+" title="Invalid email address" placeholder="asdasd@asd.asd" required></div>
             <div><label for="pwd">Password:</label> <input type="password" name="pwd"  pattern="(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{15,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 15 or more characters" required></div>
             <div><label for="feedback">Feedback:</label>  <textarea rows="3" name = "feedback" disabled>Thank you! Your application is awesome!</textarea></div>
