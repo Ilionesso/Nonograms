@@ -22,7 +22,7 @@ class FileManager{
     }
 
     static getOfflineLevels(main) {
-        fetch("./resources/levels/offlinelevels.json")
+        fetch("./resources/levels/offlineLevels.json")
             .then(response => response.json())
             .then(json => {
                 main.setLevels(json);
