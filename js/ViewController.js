@@ -42,7 +42,7 @@ class ViewController{
     showLevels(levels){
         let mainEl = document.querySelector('main');
         let levelCards = document.createElement("div");
-        if (!navigator.onLine) {
+        if (navigator.onLine !== true) {
             let offline = document.createElement("div");
             offline.classList.add("card");
             offline.innerHTML += `<p>Sorry, you are offline and main level file is unavailable. Just take this.</p>`;
