@@ -1,7 +1,8 @@
 class ViewController{
-    constructor(stateHolder, main){
+    constructor(stateHolder, audiomanager, main){
         this.xmlns = "http://www.w3.org/2000/svg";
         this.stateHolder = stateHolder;
+        this.audioManager = audiomanager;
         this.main = main;
     }
 
@@ -61,8 +62,7 @@ class ViewController{
     drawGame(game){
         if (game !== undefined) this.gameDrawer = game.drawer;
         if (this.gameDrawer === undefined) return;
-        let mainEl = document.querySelector('main');
-        mainEl.innerHTML = ``;
+        this.eraseMain();
         this.gameDrawer.drawGameFrame();
         this.drawGameMenu();
     }
@@ -80,13 +80,17 @@ class ViewController{
         let saveEl = document.createElement("div");
         saveEl.classList.add("saveGameButton");
         saveEl.classList.add("navButton");
-        saveEl.addEventListener("click", () => this.main.saveGame());
+        saveEl.addEventListener("click", () => StateHolder.saveGame());
         let checkEl = document.createElement("div");
         checkEl.classList.add("checkSolutionButton");
         checkEl.classList.add("navButton");
         checkEl.addEventListener("click", () => this.main.checkSolution());
+        let musicEl = this.svgMusic();
+        musicEl.classList.add("navButton");
+        musicEl.addEventListener("click", () => this.audioManager.switchAudioPlay());
         navMenu.appendChild(saveEl);
         navMenu.appendChild(checkEl);
+        navMenu.appendChild(musicEl);
 
     }
 
@@ -94,16 +98,52 @@ class ViewController{
     //ABOUT
 
     showAbout(){
-        // let mainEl = document.querySelector('main');
-        // mainEl.innerHTML = '';
-        // let sectionPlate = document.createElement("div");
-        // sectionPlate.classList.add("sectionPlate");
-        // mainEl.appendChild(sectionPlate);
-        // sectionPlate.innerHTML= `
-        // <p>
-        //
-        //
-        // `
+        let mainEl = document.querySelector('main');
+        mainEl.innerHTML = '';
+        let sectionPlate = document.createElement("div");
+        sectionPlate.classList.add("sectionPlate");
+        sectionPlate.innerHTML= `
+            <p>Japanese crosswords (Nonograms) – is a very fascinating kind of graphic crosswords, which develops logic, creative thinking and erudition.<br>
+               There is a video instruction that should help you start to play this wonderful game.
+            </p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/uhnvizIskjQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+
+        this.showTreeAbout(sectionPlate);
+        mainEl.appendChild(sectionPlate);
+    }
+
+    showTreeAbout(sectionPlate){
+        if (StateHolder.isTreeDestroyed() === false) {
+            let svgTree = this.svgTree();
+            svgTree.classList.add("sectionSvgTree");
+            sectionPlate.appendChild(svgTree);
+            svgTree.addEventListener('click', () => {
+                const path = svgTree.querySelectorAll("path");
+                svgTree.removeChild(path[0]);
+                if (path.length === 1) {
+                    StateHolder.destroyTree();
+                    sectionPlate.removeChild(svgTree);
+                    sectionPlate.innerHTML +=`
+                    <p>You destroyed the tree?<br>
+                       You just destroyed the tree!<br>
+                       That's not a mistake. You saw, how parts of the tree are disappearing.<br>
+                       Why did you do that? You did it for nothing. You didn't purpose to get wood or apples.<br>
+                       You only wanted to see what happens if you destroy the tree!<br>
+                       What's wrong with you?<br>
+                       Burn in the hell, damn bastard.</p>`;
+                }
+            });
+        }
+        else{
+            sectionPlate.innerHTML +=`
+                    <p>You returned!<br>
+                       I guess, you expected to see the tree again?<br>
+                       No! You destroyed it.<br>
+                       Disassemble your leg and look, if it grows again<br>
+                       Just go away. Play the game and have fun.
+                       `;
+        }
+
     }
 
     //OPTIONS
@@ -143,7 +183,9 @@ class ViewController{
 
     showSvgs(){
         let nav = document.querySelector("nav");
-        nav.appendChild(this.svgTree());
+        let svgTree = this.svgTree();
+        svgTree.addEventListener("click", () => location.hash = "menu");
+        nav.appendChild(svgTree);
     }
 
 
@@ -151,14 +193,21 @@ class ViewController{
         const svgContainer = document.createElementNS (this.xmlns, "svg");
         svgContainer.setAttributeNS(null, "viewBox", "0 0 256 256");
         svgContainer.classList.add("svgTree");
-
-        this.appendSvgByPath(svgContainer, "M103,10L360,176L-4,154Z", "rgb(98, 127, 16)", "0.78");
-        this.appendSvgByPath(svgContainer, "M107,113L161,236L118,235Z", "rgb(86, 75, 4)", "0.72");
-        this.appendSvgByPath(svgContainer, "M139,237L192,230L151,221Z", "rgb(84, 139, 13)", "0.81");
-        this.appendSvgByPath(svgContainer, "M52,232L141,213L120,236Z","rgb(87, 136, 5)", "0.82");
-        this.appendSvgByPath(svgContainer, "M168,172L41,54L208,58Z", "rgb(81, 112, 0)", "0.57");
         this.appendSvgByPath(svgContainer, "M19,118L63,166L36,87Z", "rgb(127, 161, 40)", "0.89");
-        svgContainer.addEventListener("click", () => location.hash = "menu");
+        this.appendSvgByPath(svgContainer, "M168,172L41,54L208,58Z", "rgb(81, 112, 0)", "0.57");
+        this.appendSvgByPath(svgContainer, "M52,232L141,213L120,236Z","rgb(87, 136, 5)", "0.82");
+        this.appendSvgByPath(svgContainer, "M139,237L192,230L151,221Z", "rgb(84, 139, 13)", "0.81");
+        this.appendSvgByPath(svgContainer, "M107,113L161,236L118,235Z", "rgb(86, 75, 4)", "0.72");
+        this.appendSvgByPath(svgContainer, "M103,10L360,176L-4,154Z", "rgb(98, 127, 16)", "0.78");
+        return svgContainer;
+    }
+
+    svgMusic(){
+        const svgContainer = document.createElementNS (this.xmlns, "svg");
+        svgContainer.setAttributeNS(null, "viewBox", "0 0 512 512");
+        svgContainer.classList.add("svgTree");
+        const strPath = "M160,96v304.594C143,390.375,120.688,384,96,384c-53,0-96,28.625-96,64s43,64,96,64s96-28.625,96-64V151.281l288-78.563v231.875C463,294.375,440.688,288,416,288c-53,0-96,28.625-96,64s43,64,96,64s96-28.625,96-64V0L160,96z";
+        this.appendSvgByPath(svgContainer, strPath, "#000", "1");
         return svgContainer;
     }
 
@@ -168,6 +217,11 @@ class ViewController{
         path.setAttributeNS(null, "d", d);
         path.setAttributeNS(null, "fill-opacity", fillOpacity);
         svg.appendChild(path);
+    }
+
+    eraseMain(){
+        let mainEl = document.querySelector('main');
+        mainEl.innerHTML = ``;
     }
 
 

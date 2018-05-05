@@ -1,24 +1,19 @@
 class StateHolder{
 
     constructor(main){
-        this.stateHolder = this;
         this.main = main;
         window.addEventListener("hashchange", () =>{
             console.log(location.hash);
-            main.doByHash(location.hash)
+            main.doByHash(location.hash);
         });
     }
 
-    static getStateHolder(){
-        return this.stateHolder;
-    }
-
-    setState(strState) {
+    static setState(strState) {
         // history.pushState(null, null, "#"+strState);
         location.hash = strState;
     }
 
-    saveGame(game){
+    static saveGame(game){
         if (game !== undefined)
             try {
                 localStorage.setItem("savedGame", JSON.stringify(GameFactory.gameCopy(game)));
@@ -37,7 +32,7 @@ class StateHolder{
         }
     }
 
-    loadGame(){
+    static loadGame(){
         try {
             const savedGame = localStorage.getItem("savedGame");
             if (!savedGame){
@@ -50,6 +45,14 @@ class StateHolder{
             console.log("Unable to load game:" + error);
             alert("Unable to load game. Sorry. :/")
         }
+    }
+
+    static isTreeDestroyed(){
+        return localStorage.getItem("tree") === "1";
+    }
+
+    static destroyTree(){
+        localStorage.setItem("tree", "1");
     }
 
 }

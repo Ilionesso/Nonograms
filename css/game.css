@@ -138,13 +138,7 @@ div .declarationSquare{
 
 /*PSEUDO*/
 
-svg{
-    transition: transform 1s ease-in-out;
-}
 
-svg:hover{
-    transform: rotateY(180deg);
-}
 
 div .declarationSquare:hover, div .square:hover:not(.marked){
     background-color: #eeeccc;

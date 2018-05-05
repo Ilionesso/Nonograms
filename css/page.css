@@ -9,7 +9,7 @@ body{
 .page {
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh;
+	min-height: inherit;
 }
 .page header {
 	background: lightblue;
@@ -33,11 +33,16 @@ body{
 	min-width: 9em;
 }
 
-.page section nav .svgTree{
-	width: inherit;
-	height: available;
+.page section nav .svgTree {
+    width: inherit;
+    height: available;
     margin: 2vh;
-	flex-grow: 0;
+    flex-grow: 0;
+    transition: transform 100s ease-out;
+}
+
+.page section nav svg:hover{
+    transform: rotateY(18000deg);
 }
 
 .page section nav .navMenu{
@@ -54,13 +59,15 @@ body{
     font-size: x-large;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
     margin: 1vh;
-    padding: 1vh;
+    padding: 2vh;
     width: inherit;
     min-height: 10vh;
-    min-width: 15vh;
     transition: background-color 0.15s ease-in-out;
+}
+
+.page section nav .navMenu svg{
+    width: 10vh;
 }
 
 
@@ -141,6 +148,11 @@ body{
     min-width: inherit;
 }
 
+.page section main .sectionPlate .svgSectionTree{
+    width: inherit;
+    height: available;
+    margin: 2vh;
+}
 
 .page section main .sectionPlate form{
     display: flex;
@@ -239,6 +251,8 @@ body{
 	align-items: center;
 }
 
+
+
 #ololo{
 	/*background-color: aquamarine;*/
 	/*height: 50px;*/
@@ -247,7 +261,7 @@ body{
 	/*transform: rotate(10deg) translateX(20px) translateY(-20px) rotateZ(20deg);*/
 
 }
-@media screen and (max-width: 700px){
+@media screen and (max-width: 780px){
 	.page section{
 		flex-direction: column;
 	}
@@ -266,11 +280,6 @@ body{
         margin: 0.5em;
         flex-grow: 0;
     }
-
-
-	.page section aside{
-		width: 100%;
-	}
 }
 
 

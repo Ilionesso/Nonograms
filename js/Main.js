@@ -2,7 +2,8 @@ class Main{
 
     constructor(drawer){
         this.stateHolder = new StateHolder(this);
-        this.view = new ViewController(this.stateHolder, this);
+        this.audioManager = new AudioManager(this);
+        this.view = new ViewController(this.stateHolder, this.audioManager, this);
         this.levels = null;
     }
 
@@ -12,13 +13,13 @@ class Main{
 
     chooseLevel(){
         if (this.levels == null) return FileManager.getLevels(this);
-        this.stateHolder.setState("levels");
+        StateHolder.setState("levels");
         this.view.showLevels(this.levels);
     }
 
     startGameByID(id){
         this.game = GameFactory.getGameFromLevel(this.levels[id]);
-        this.stateHolder.setState("game");
+        StateHolder.setState("game");
         this.view.drawGame(this.game);
         this.game.initListeners();
     }
@@ -26,14 +27,14 @@ class Main{
     saveGame(){
         if (this.game == null || this.game === undefined) return;
         console.log(this.game);
-        this.stateHolder.saveGame(this.game);
+        StateHolder.saveGame(this.game);
     }
 
     continueGame(){
-        const savedGame = this.stateHolder.loadGame();
+        const savedGame = StateHolder.loadGame();
         if(!savedGame) return;
         this.game = GameFactory.getGameFromSave(savedGame);
-        this.stateHolder.setState("game");
+        StateHolder.setState("game");
         this.view.drawGame(this.game);
         this.game.initListeners();
     }
@@ -46,17 +47,17 @@ class Main{
 
     showMenu(){
         this.view.showMenu();
-        this.stateHolder.setState("menu");
+        StateHolder.setState("menu");
     }
 
     showAbout(){
         this.view.showAbout();
-        this.stateHolder.setState("about");
+        StateHolder.setState("about");
     }
 
     showOptions(){
         this.view.showOptions();
-        this.stateHolder.setState("options");
+        StateHolder.setState("options");
     }
 
 
@@ -64,8 +65,8 @@ class Main{
         this.levels = levels;
     }
 
-    doByHash(hash){
-        switch (hash){
+    doByHash(hash) {
+        switch (hash) {
             case("#menu"):
                 this.showMenu();
                 break;
@@ -75,7 +76,12 @@ class Main{
             case("#options"):
                 this.showOptions();
                 break;
-        }
+            case("#about"):
+                this.showAbout();
+                break;
 
+        }
+        this.audioManager.setProperAudio(hash);
     }
+
 }
