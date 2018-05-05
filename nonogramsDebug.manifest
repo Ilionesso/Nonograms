@@ -1,11 +1,10 @@
 CACHE MANIFEST
-# v14 2018-05-05
+# v15 2018-05-05
 
 CACHE:
 
 ./css/src/page.css
 ./css/src/game.css
-
 ./indexDebug.html
 
 #js
