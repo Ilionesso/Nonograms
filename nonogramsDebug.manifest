@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# v10 2018-05-05
+# v12 2018-05-05
 
 CACHE:
 
@@ -31,4 +31,4 @@ NETWORK:
 ./resources/levels/levels.json
 
 FALLBACK:
-#./resources/levels/offlineLevels.json ./resources/levels/levels.json
+./resources/levels/levels.json ./resources/levels/offlineLevels.json

@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# v10 2018-05-05
+# v12 2018-05-05
 
 CACHE:
 
@@ -22,7 +22,7 @@ CACHE:
 ./js/AudioManager.js
 
 
-# resources
+#resources
 ./resources/levels/offlineLevels.json
 ./resources/img/cross.gif
 
