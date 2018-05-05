@@ -80,7 +80,7 @@ class ViewController{
         let saveEl = document.createElement("div");
         saveEl.classList.add("saveGameButton");
         saveEl.classList.add("navButton");
-        saveEl.addEventListener("click", () => StateHolder.saveGame());
+        saveEl.addEventListener("click", () => this.main.saveGame());
         let checkEl = document.createElement("div");
         checkEl.classList.add("checkSolutionButton");
         checkEl.classList.add("navButton");

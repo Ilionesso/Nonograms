@@ -1,6 +1,6 @@
 class Main{
 
-    constructor(drawer){
+    constructor(){
         this.stateHolder = new StateHolder(this);
         this.audioManager = new AudioManager(this);
         this.view = new ViewController(this.stateHolder, this.audioManager, this);
@@ -26,7 +26,6 @@ class Main{
 
     saveGame(){
         if (this.game == null || this.game === undefined) return;
-        console.log(this.game);
         StateHolder.saveGame(this.game);
     }
 
