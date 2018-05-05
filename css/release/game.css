@@ -7,9 +7,8 @@
     -ms-flex-direction: column;
     flex-direction: column;
     border: 2px solid grey;
-    border-bottom: 1px solid grey;
-    border-left: 2px solid grey;
-    border-right: 1px solid grey;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
 
 }
 
@@ -187,7 +186,7 @@ div .declarationSquare{
     -webkit-transition: background-image 0.5s ease-in-out;
     -o-transition: background-image 0.5s ease-in-out;
     transition: background-image 0.5s ease-in-out;
-    background-image: url("../../img/cross.gif");
+    background-image: url("../../resources/img/cross.gif");
 }
 
 .yDeclaration:nth-of-type(5n){

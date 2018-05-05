@@ -1,0 +1,34 @@
+CACHE MANIFEST
+# v1 2018-05-05
+
+CACHE:
+
+./index.html
+
+#js
+
+./js/Facade.js
+./js/Main.js
+./js/StateHolder.js
+./js/ViewController.js
+./js/GameFactory.js
+./js/GameModel.js
+./js/Game.js
+./js/GameDrawer.js
+./js/FileManager.js
+./js/AudioManager.js
+
+
+./css/src/page.css
+./css/src/game.css
+
+
+# resources
+./resources/levels/offlineLevels.json
+./resources/img/cross.gif
+
+NETWORK:
+./resources/music
+
+FALLBACK:
+resources/levels/levels.json resources/levels/offlineLevels.json

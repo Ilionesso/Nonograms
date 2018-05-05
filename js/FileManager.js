@@ -2,7 +2,7 @@ class FileManager{
 
     static getLevels(main){
         console.log("Getting Levels");
-        fetch("./resources/levels.json")
+        fetch("./resources/levels/levels.json")
             .then(response => response.json())
             .then(json => {
                 main.setLevels(json);

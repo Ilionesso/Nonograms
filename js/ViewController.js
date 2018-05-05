@@ -42,6 +42,13 @@ class ViewController{
     showLevels(levels){
         let mainEl = document.querySelector('main');
         let levelCards = document.createElement("div");
+        if (!navigator.onLine) {
+            let offline = document.createElement("div");
+            offline.classList.add("card");
+            offline.innerHTML += `<p>Sorry, you are offline and main level file is unavailable. Just take this.</p>`;
+            mainEl.appendChild(offline);
+            document.querySelector('.page footer').innerHTML = `<p>"It's too dangerous to go alone. Take this." is a legendary phrase from "The Legend Of Zelda" `;
+        }
         levelCards.classList.add("levels");
         Object.values(levels).forEach(level=>{
             let levelEl = document.createElement("div");
@@ -70,27 +77,32 @@ class ViewController{
 
     drawGameMenu(){
         let navMenu = document.querySelector('.navMenu');
-        if (navMenu == null){
+        if (navMenu == undefined){
             let navEl = document.querySelector('nav');
             navMenu = document.createElement("div");
             navMenu.classList.add("navMenu");
             navEl.appendChild(navMenu);
         }
+
         navMenu.innerHTML = '';
         let saveEl = document.createElement("div");
         saveEl.classList.add("saveGameButton");
         saveEl.classList.add("navButton");
         saveEl.addEventListener("click", () => this.main.saveGame());
+        navMenu.appendChild(saveEl);
+
         let checkEl = document.createElement("div");
         checkEl.classList.add("checkSolutionButton");
         checkEl.classList.add("navButton");
         checkEl.addEventListener("click", () => this.main.checkSolution());
-        let musicEl = this.svgMusic();
-        musicEl.classList.add("navButton");
-        musicEl.addEventListener("click", () => this.audioManager.switchAudioPlay());
-        navMenu.appendChild(saveEl);
         navMenu.appendChild(checkEl);
-        navMenu.appendChild(musicEl);
+
+        if (this.audioManager != undefined) {
+            let musicEl = this.svgMusic();
+            musicEl.classList.add("navButton");
+            musicEl.addEventListener("click", () => this.audioManager.switchAudioPlay());
+            navMenu.appendChild(musicEl);
+        }
 
     }
 
@@ -105,9 +117,9 @@ class ViewController{
         sectionPlate.innerHTML= `
             <p>Japanese crosswords (Nonograms) – is a very fascinating kind of graphic crosswords, which develops logic, creative thinking and erudition.<br>
                There is a video instruction that should help you start to play this wonderful game.
-            </p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/uhnvizIskjQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
-
+            </p>`;
+        if (navigator.onLine) sectionPlate.innerHTML += `<iframe width="560" height="315" src="https://www.youtube.com/embed/uhnvizIskjQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`
+        else sectionPlate.innerHTML += `Lol, you have no internet connection. So there is no any video instructions. Live with it.`;
         this.showTreeAbout(sectionPlate);
         mainEl.appendChild(sectionPlate);
     }

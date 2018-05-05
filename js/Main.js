@@ -2,7 +2,7 @@ class Main{
 
     constructor(){
         this.stateHolder = new StateHolder(this);
-        this.audioManager = new AudioManager(this);
+        if (navigator.onLine) this.audioManager = new AudioManager(this);
         this.view = new ViewController(this.stateHolder, this.audioManager, this);
         this.levels = null;
     }
@@ -80,7 +80,7 @@ class Main{
                 break;
 
         }
-        this.audioManager.setProperAudio(hash);
+        if (this.audioManager !== undefined) this.audioManager.setProperAudio(hash);
     }
 
 }
