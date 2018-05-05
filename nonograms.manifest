@@ -3,6 +3,9 @@ CACHE MANIFEST
 
 CACHE:
 
+./css/release/page.css
+./css/release/game.css
+
 ./index.html
 
 #js
@@ -19,8 +22,7 @@ CACHE:
 ./js/AudioManager.js
 
 
-./css/release/page.css
-./css/release/game.css
+
 
 
 # resources
@@ -29,6 +31,7 @@ CACHE:
 
 NETWORK:
 ./resources/music
+./resources/levels/levels.json
 
 FALLBACK:
-resources/levels/levels.json resources/levels/offlineLevels.json
+./resources/levels/levels.json ./resources/levels/offlineLevels.json
