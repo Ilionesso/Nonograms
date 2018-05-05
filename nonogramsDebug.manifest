@@ -1,12 +1,12 @@
 CACHE MANIFEST
-# v6 2018-05-05
+# v10 2018-05-05
 
 CACHE:
 
 ./css/src/page.css
 ./css/src/game.css
 
-./index.html
+./indexDebug.html
 
 #js
 
@@ -22,9 +22,6 @@ CACHE:
 ./js/AudioManager.js
 
 
-
-
-
 # resources
 ./resources/levels/offlineLevels.json
 ./resources/img/cross.gif
@@ -34,4 +31,4 @@ NETWORK:
 ./resources/levels/levels.json
 
 FALLBACK:
-./resources/levels/levels.json ./resources/levels/offlineLevels.json
+#./resources/levels/offlineLevels.json ./resources/levels/levels.json

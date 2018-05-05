@@ -42,6 +42,7 @@ class ViewController{
     showLevels(levels){
         let mainEl = document.querySelector('main');
         let levelCards = document.createElement("div");
+        mainEl.innerHTML = ``;
         if (navigator.onLine !== true) {
             let offline = document.createElement("div");
             offline.classList.add("card");
@@ -60,7 +61,6 @@ class ViewController{
             levelEl.addEventListener("click", (e) => this.main.startGameByID(e.currentTarget.getAttribute("levelID")));
             levelCards.appendChild(levelEl);
         });
-        mainEl.innerHTML = ``;
         mainEl.appendChild(levelCards);
         this.clearNavMenu();
     }
