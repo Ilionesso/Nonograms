@@ -84,5 +84,13 @@ class GameDrawer{
         if (square.classList.contains("marked"))
             square.classList.remove("marked");
         else square.classList.add("marked");
+        square.classList.remove("crossed");
+    }
+
+    invertCrossed(square){
+        if (square.classList.contains("crossed"))
+            square.classList.remove("crossed");
+        else square.classList.add("crossed");
+        square.classList.remove("marked");
     }
 }

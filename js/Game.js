@@ -30,50 +30,25 @@ class Game{
     initSquaresListeners(){
         let squares = document.querySelectorAll(".square");
         for (let square of squares) {
-                square.addEventListener("click", this.squareListener.bind(this))
+                square.addEventListener("mousedown", this.squareListener.bind(this));
+                square.addEventListener("contextmenu", evt => evt.preventDefault());
         }
     }
 
     squareListener(e){
         let square = e.currentTarget;
-        // console.log(this.playground);
-        this.playground.invertAt([Number.parseInt(square.getAttribute("coordX")), Number.parseInt(square.getAttribute("coordY"))]);
-        this.drawer.invertMarked(square);
+        switch (e.button){
+            case (0):
+                this.playground.invertAt([Number.parseInt(square.getAttribute("coordX")), Number.parseInt(square.getAttribute("coordY"))]);
+                this.drawer.invertMarked(square);
+                break;
+            case (2):
+                this.drawer.invertCrossed(square);
+                break;
+        }
+
     }
 
-    moveCursor(to){
-        if (this.playground.isCoordinateInPlayground(to))
-            this.cursor = to;
-    }
-
-    moveCursorLeft(newCoordinates = this.cursor){
-        newCoordinates[0]--;
-        this.moveCursor(newCoordinates);
-    }
-    moveCursorRight(newCoordinates = this.cursor){
-        newCoordinates[0]++;
-        this.moveCursor(newCoordinates);
-    }
-    moveCursorUp(newCoordinates = this.cursor){
-        newCoordinates[1]--;
-        this.moveCursor(newCoordinates);
-    }
-    moveCursorDown(newCoordinates = this.cursor){
-        newCoordinates[1]++;
-        this.moveCursor(newCoordinates);
-    }
-
-    markCursor(to){
-        this.playground.mark(this.cursor, to)
-    }
-
-    markCursorToEmpty(){
-        this.markCursor("empty");
-    }
-
-    markCursorToFilled(){
-        this.markCursor("filled");
-    }
 }
 
 
