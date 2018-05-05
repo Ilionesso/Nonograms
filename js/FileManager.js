@@ -3,9 +3,9 @@ class FileManager{
     static getLevels(main){
         console.log("Getting Levels");
         if (navigator.onLine !== true)
-            FileManager.getOfflineLevels();
+            FileManager.getOfflineLevels(main);
         else
-            FileManager.getOnlineLevels();
+            FileManager.getOnlineLevels(main);
     }
 
     static getOnlineLevels(main) {
