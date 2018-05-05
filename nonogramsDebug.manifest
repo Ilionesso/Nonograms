@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# v12 2018-05-05
+# v13 2018-05-05
 
 CACHE:
 
@@ -27,6 +27,7 @@ CACHE:
 ./resources/img/cross.gif
 
 NETWORK:
+*
 ./resources/music
 ./resources/levels/levels.json
 
