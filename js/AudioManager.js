@@ -29,8 +29,6 @@ class AudioManager {
         return this.audioNames[randomInt];
     }
 
-
-
     switchAudioPlay() {
         if (this.audio === undefined) return console.error("Audio is undefined");
         if (this.audio.paused)
