@@ -1,9 +1,11 @@
+//Manipulations with hash and saving game.
+
 class StateHolder{
 
     constructor(main){
         this.main = main;
         window.addEventListener("hashchange", () =>{
-            console.log(location.hash);
+            // console.log(location.hash);
             main.doByHash(location.hash);
         });
     }

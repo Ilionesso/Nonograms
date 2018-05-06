@@ -1,3 +1,6 @@
+
+//Main app class. This is actually the facade between state holder, view unit and audio unit.
+
 class Main{
 
     constructor(){

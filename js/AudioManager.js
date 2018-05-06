@@ -1,4 +1,4 @@
-
+//Holds audio. Only game soundtrack for now.
 class AudioManager {
 
     constructor(main) {

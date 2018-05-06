@@ -1,4 +1,5 @@
-
+//Game's "Main"
+//Mainly holds listeners
 class Game{
     constructor(playground, declaration){
         this.playground = playground;

@@ -136,13 +136,13 @@ class ViewController{
                     StateHolder.destroyTree();
                     sectionPlate.removeChild(svgTree);
                     sectionPlate.innerHTML +=`
-                    <p>You destroyed the tree?<br>
+                    <p>Did you destroyed the tree?<br>
                        You just destroyed the tree!<br>
                        That's not a mistake. You saw, how parts of the tree are disappearing.<br>
                        Why did you do that? You did it for nothing. You didn't purpose to get wood or apples.<br>
                        You only wanted to see what happens if you destroy the tree!<br>
                        What's wrong with you?<br>
-                       Burn in the hell, damn bastard.</p>`;
+                       Burn in hell, damn bastard.</p>`;
                 }
             });
         }
@@ -151,7 +151,7 @@ class ViewController{
                     <p>You returned!<br>
                        I guess, you expected to see the tree again?<br>
                        No! You destroyed it.<br>
-                       Disassemble your leg and look, if it grows again<br>
+                       Disassemble your leg and look, if it grows again.<br>
                        Just go away. Play the game and have fun.
                        `;
         }

@@ -1,4 +1,6 @@
 
+
+// Game's frame of (non)marked squares. This should be a picture in finale.
 class Playground {
     constructor(size){
         this.size = size;
@@ -60,13 +62,15 @@ class Playground {
     }
 
 }
-
+// Game's columns under its playground and rows to the right from its playground that describes how many squares in this
+// row/column are marked in sequence. Between sequences must be at least one unmarked square.
 class Declaration {
     constructor() {
     }
 
     static getCopyOf(declaration){
         let newDeclaration = new Declaration();
+        //single declarations are arrays of arrays
         newDeclaration.xDeclaration = declaration.xDeclaration;
         newDeclaration.yDeclaration = declaration.yDeclaration;
         return newDeclaration;

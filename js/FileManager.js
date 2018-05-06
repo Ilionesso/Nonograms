@@ -1,3 +1,5 @@
+//Manipulating with files. Only with levels now.
+
 class FileManager{
 
     static getLevels(main){

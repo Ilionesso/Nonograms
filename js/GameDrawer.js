@@ -1,6 +1,5 @@
 
-const svgPath = "http://www.w3.org/2000/svg";
-
+//View unit of the game
 class GameDrawer{
 
     constructor(game){
@@ -31,6 +30,7 @@ class GameDrawer{
         return this.drawDeclarations("y", this.game.declaration.yDeclaration);
     }
 
+    //Universal for x and y
     drawDeclarations(dimension, declarations){
 
         let declarationsEl = document.createElement("div");

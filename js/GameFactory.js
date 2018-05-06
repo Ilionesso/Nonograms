@@ -1,14 +1,11 @@
+
+//Game making tools
 class GameFactory{
 
     constructor() {
     }
 
-    static getDefaultGame(){
-        let playground = GameFactory.getPlaygroundFromDefaultMap();
-        let declaration = new Declaration(playground);
-        playground.setEmptyFrame();
-        return new Game(playground, declaration);
-    }
+
 
     static getGameFromLevel(level){
         let playground = GameFactory.getPlaygroundFromMap(level.map);
@@ -20,20 +17,6 @@ class GameFactory{
 
     static getGameFromSave(savedGame){
         return new Game(Playground.getCopyOf(savedGame.playground), Declaration.getCopyOf(savedGame.declaration))
-    }
-
-    static getDefaultSizes(){
-        return [8, 8];
-    }
-
-    static getDefaultEmptyPlayground(){
-        let playground = new Playground(GameFactory.getDefaultSizes());
-        playground.setEmptyFrame();
-        return playground;
-    }
-
-    static getPlaygroundFromDefaultMap(){
-        return this.getPlaygroundFromMap(this.getDefaultMap())
     }
 
     static getPlaygroundFromMap(map){
@@ -48,22 +31,42 @@ class GameFactory{
         return copyGame;
     }
 
+    //Old built-in map
 
+    // static getDefaultGame(){
+    //     let playground = GameFactory.getPlaygroundFromDefaultMap();
+    //     let declaration = new Declaration(playground);
+    //     playground.setEmptyFrame();
+    //     return new Game(playground, declaration);
+    // }
+    // static getDefaultSizes(){
+    //     return [8, 8];
+    // }
 
-    static getDefaultMap() {
-        return [
-                [0, 1, 0, 0, 0, 0, 0, 1],
-                [0, 1, 0, 1, 0, 1, 0, 0],
-                [0, 1, 0, 1, 1, 1, 1, 1],
-                [0, 1, 0, 0, 0, 1, 0, 0],
-                [0, 1, 0, 0, 0, 1, 0, 1],
-                [0, 1, 0, 1, 0, 1, 0, 0],
-                [0, 1, 0, 1, 0, 1, 0, 1],
-                [0, 1, 0, 0, 0, 0, 0, 0]
-                ]
+    // static getDefaultEmptyPlayground(){
+    //     let playground = new Playground(GameFactory.getDefaultSizes());
+    //     playground.setEmptyFrame();
+    //     return playground;
+    // }
+    //
+    // static getPlaygroundFromDefaultMap(){
+    //     return this.getPlaygroundFromMap(this.getDefaultMap())
+    // }
 
-
-    }
+    // static getDefaultMap() {
+    //     return [
+    //             [0, 1, 0, 0, 0, 0, 0, 1],
+    //             [0, 1, 0, 1, 0, 1, 0, 0],
+    //             [0, 1, 0, 1, 1, 1, 1, 1],
+    //             [0, 1, 0, 0, 0, 1, 0, 0],
+    //             [0, 1, 0, 0, 0, 1, 0, 1],
+    //             [0, 1, 0, 1, 0, 1, 0, 0],
+    //             [0, 1, 0, 1, 0, 1, 0, 1],
+    //             [0, 1, 0, 0, 0, 0, 0, 0]
+    //             ]
+    //
+    //
+    // }
 }
 
 
