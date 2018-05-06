@@ -4,12 +4,15 @@
 
 body{
     margin: 0;
+    min-width: 100vh;
+    width: auto;
 }
 
 .page {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    width: inherit;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;

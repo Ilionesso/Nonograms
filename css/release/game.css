@@ -1,3 +1,5 @@
+
+
 .frame {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -44,8 +46,8 @@
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
-    -ms-flex-flow: row-reverse  wrap-reverse;
-    flex-flow: row-reverse  wrap-reverse;
+    -ms-flex-flow: row-reverse  nowrap;
+    flex-flow: row-reverse  nowrap;
 }
 
 .row{

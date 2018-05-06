@@ -12,7 +12,9 @@ body{
 	display: flex;
 	flex-direction: column;
 	min-height: inherit;
+    width: inherit;
 }
+
 .page header {
 	background: lightblue;
 	height: 50px;
