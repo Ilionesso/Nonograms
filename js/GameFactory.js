@@ -5,8 +5,6 @@ class GameFactory{
     constructor() {
     }
 
-
-
     static getGameFromLevel(level){
         let playground = GameFactory.getPlaygroundFromMap(level.map);
         let declaration = new Declaration();

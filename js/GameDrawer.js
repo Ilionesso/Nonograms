@@ -64,6 +64,8 @@ class GameDrawer{
                 rect.classList.add('square');
                 if (playground.frame[[curX,curY]] === 1)
                     rect.classList.add("marked");
+                else if (playground.frame[[curX,curY]] === 2)
+                    rect.classList.add("crossed");
                 rect.setAttribute("coordX", ""+curX);
                 rect.setAttribute("coordY", ""+curY);
                 row.appendChild(rect);

@@ -45,9 +45,29 @@ class Playground {
             this.frame[coordinates] = to;
     }
 
-    invertAt(coordinates){
-        // console.log(this.frame);
-        this.frame[coordinates] = (this.frame[coordinates]-1)*(-1);
+    invertMarkedAt(coordinates){
+        switch (this.frame[coordinates]){
+            case (1):
+                this.frame[coordinates] = 0;
+                break;
+            case (2):
+            default:
+                this.frame[coordinates] = 1;
+                break;
+
+        }
+    }
+
+    invertCrossedAt(coordinates){
+        switch (this.frame[coordinates]){
+            case (2):
+                this.frame[coordinates] = 0;
+                break;
+            case (1):
+            default:
+                this.frame[coordinates] = 2;
+                break;
+        }
     }
 
 
