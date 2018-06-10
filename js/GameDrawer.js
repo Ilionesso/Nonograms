@@ -42,7 +42,7 @@ class GameDrawer{
             for (const num of declaration) {
                 let decSquare = document.createElement("div");
                 decSquare.classList.add('declarationSquare');
-                decSquare.innerHTML = "<label>"+num+"</label>";
+                decSquare.innerHTML = `<label>${num}</label>`;
                 declarationEl.appendChild(decSquare);
             }
             counter++;
@@ -52,7 +52,7 @@ class GameDrawer{
         return declarationsEl;
     }
 
-
+    //Draws the playground row by row, sets the divs' values by gotten frame's values
     drawPlayground(playground = this.game.playground){
         let frame = document.createElement("div");
         frame.classList.add('frame');
@@ -77,22 +77,22 @@ class GameDrawer{
 
     crossDeclarationSquare(e){
         let square = e.currentTarget;
-        if (square.classList.contains("crossed"))
-            square.classList.remove("crossed");
-        else square.classList.add("crossed");
+        this.invertClass(square, "crossed");
     }
 
     invertMarked(square){
-        if (square.classList.contains("marked"))
-            square.classList.remove("marked");
-        else square.classList.add("marked");
+        this.invertClass(square, "marked");
         square.classList.remove("crossed");
     }
 
     invertCrossed(square){
-        if (square.classList.contains("crossed"))
-            square.classList.remove("crossed");
-        else square.classList.add("crossed");
+        this.invertClass(square, "crossed");
         square.classList.remove("marked");
+    }
+
+    invertClass(square, className){
+        if (square.classList.contains(className))
+            square.classList.remove(className);
+        else square.classList.add(className);
     }
 }

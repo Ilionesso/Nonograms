@@ -1,6 +1,4 @@
-
-
-// Game's frame of (non)marked squares. This should be a picture in finale.
+// Game's frame of (non)marked squares. This should be a picture in final.
 class Playground {
     constructor(size){
         this.size = size;
@@ -19,7 +17,7 @@ class Playground {
         this.frame = Playground.getFrame(this.size, 0);
     }
 
-    //Map is 3dimensional array in order (y, z, x)
+    //Map is 2dimensional array in order (x, y)
     setFrameFromMap(map){
 
         this.frame = {};
@@ -28,6 +26,7 @@ class Playground {
                 this.frame[[curX, curY]] = map[curY][curX];
     }
 
+    //Returns a frame of specified size, filled by "filler" value
     static getFrame(arrayOfSizes, filler) {
         let frame = {};
         for (let x = 0; x < arrayOfSizes[0]; x++)
@@ -36,6 +35,7 @@ class Playground {
         return frame;
     }
 
+    //Defines, if the game's frame contains coordinates
     isCoordinateInPlayground(coordinates) {
         return this.frame[coordinates] !== undefined && this.frame[coordinates] !== null;
     }
@@ -48,11 +48,11 @@ class Playground {
     invertMarkedAt(coordinates){
         switch (this.frame[coordinates]){
             case (1):
-                this.frame[coordinates] = 0;
+                this.mark(coordinates, 0);
                 break;
             case (2):
             default:
-                this.frame[coordinates] = 1;
+                this.mark(coordinates, 1);
                 break;
 
         }
@@ -61,11 +61,11 @@ class Playground {
     invertCrossedAt(coordinates){
         switch (this.frame[coordinates]){
             case (2):
-                this.frame[coordinates] = 0;
+                this.mark(coordinates, 0);
                 break;
             case (1):
             default:
-                this.frame[coordinates] = 2;
+                this.mark(coordinates, 2);
                 break;
         }
     }
@@ -101,6 +101,7 @@ class Declaration {
         this.yDeclaration = Declaration.getYDeclarationByPlayground(playGround);
     }
 
+    //Creates declarations by gotten solved playground
     static getFacetDeclarationByPlayground(playGround, order) {
         const sizeFirst = playGround.size[order[0]]; // first
         const sizeSecond = playGround.size[order[1]]; // second

@@ -1,10 +1,11 @@
 
-//Game making tools
+//Game making tools.
 class GameFactory{
 
     constructor() {
     }
 
+    //Level = playground + declarations
     static getGameFromLevel(level){
         let playground = GameFactory.getPlaygroundFromMap(level.map);
         let declaration = new Declaration();

@@ -149,7 +149,7 @@ class ViewController{
         else{
             sectionPlate.innerHTML +=`
                     <p>You returned!<br>
-                       I guess, you expected to see the tree again?<br>
+                       I guess you expected to see the tree again?<br>
                        No! You destroyed it.<br>
                        Disassemble your leg and look, if it grows again.<br>
                        Just go away. Play the game and have fun.

@@ -1,7 +1,7 @@
 
 //Really high-level unit :D
 //Can only start init code
-//Is this proxy?
+//Isn't that proxy?
 
 class Facade{
     static start(){

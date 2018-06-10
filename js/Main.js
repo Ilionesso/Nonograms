@@ -1,4 +1,3 @@
-
 //Main app class. This is actually the facade between state holder, view unit and audio unit.
 
 class Main{
@@ -41,7 +40,7 @@ class Main{
         this.game.initListeners();
     }
 
-
+    //Not implemented yet
     checkSolution(){
         if (this.game == null || this.game === undefined) return;
         alert("Sorry, I'm a bit busy now. I'll check your ingenious solution later. Probably. \nMy thanks to you.")
@@ -67,6 +66,7 @@ class Main{
         this.levels = levels;
     }
 
+    //
     doByHash(hash) {
         switch (hash) {
             case("#menu"):

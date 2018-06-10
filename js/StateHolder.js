@@ -1,5 +1,5 @@
 //Manipulations with hash and saving game.
-
+//Uses History API and Local Storage
 class StateHolder{
 
     constructor(main){
@@ -44,11 +44,12 @@ class StateHolder{
             }
             return JSON.parse(savedGame)
         } catch (error){
-            console.log("Unable to load game:" + error);
-            alert("Unable to load game. Sorry. :/")
+            console.log("Unable to load a game:" + error);
+            alert("Unable to load a game. Sorry. :/")
         }
     }
 
+    //"About" page contains a destructible tree. If it is destroyed ones, it is destroyed forever. Makes sense, I guess.
     static isTreeDestroyed(){
         return localStorage.getItem("tree") === "1";
     }

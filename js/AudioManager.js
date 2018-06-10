@@ -1,4 +1,5 @@
 //Holds audio. Only game soundtrack for now.
+//Uses Audio API
 class AudioManager {
 
     constructor(main) {
@@ -7,6 +8,7 @@ class AudioManager {
         this.audioNames = ["Bach.mp3", "Grieg.mp3", "Wait.mp3"];
     };
 
+    //
     setProperAudio(hash) {
         switch (hash) {
             case ("#game"):
@@ -24,6 +26,7 @@ class AudioManager {
         this.audio.setAttribute("loop", "true");
     }
 
+    //Chooses the random track from the list
     randomAudioName(){
         const randomInt = Math.floor(Math.random() * Math.floor(this.audioNames.length))
         return this.audioNames[randomInt];

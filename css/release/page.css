@@ -12,13 +12,14 @@ body{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: inherit;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
     min-height: inherit;
+    width: inherit;
 }
+
 .page header {
     background: lightblue;
     height: 50px;
@@ -43,6 +44,9 @@ body{
     flex-grow: 1;
     width: available;
 }
+
+/*NAV START*/
+
 .page section nav {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -117,6 +121,9 @@ body{
     width: 10vh;
 }
 
+/*NAV END*/
+
+/*MAIN START*/
 
 .page section main {
     background: lightgreen;
@@ -327,6 +334,8 @@ body{
     content: 'About';
 }
 
+/*MAIN END*/
+
 .page section nav .saveGameButton::before{
     content: "Save Game";
 }
@@ -340,17 +349,6 @@ body{
 }
 
 
-/*.page section main .images {*/
-/*perspective: 500px;*/
-/*display: flex;*/
-/*justify-content: center;*/
-/*align-items: center;*/
-/*flex-wrap: wrap;*/
-
-/*}*/
-/*.page section main .images img {*/
-/*margin: 5px;*/
-/*}*/
 .page section aside {
     background: lightgoldenrodyellow;
     width: 200px;
@@ -378,14 +376,6 @@ body{
 
 
 
-#ololo{
-    /*background-color: aquamarine;*/
-    /*height: 50px;*/
-    /*width: 50px;*/
-    /*transform-origin: 60% 60%;*/
-    /*transform: rotate(10deg) translateX(20px) translateY(-20px) rotateZ(20deg);*/
-
-}
 @media screen and (max-width: 780px){
     .page section{
         -webkit-box-orient: vertical;
@@ -394,6 +384,7 @@ body{
         flex-direction: column;
     }
     .page section nav{
+        min-height: 5vh;
         height: 20vh;
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
@@ -410,12 +401,15 @@ body{
         height: auto;
     }
     .page section nav .svgTree{
-        width: 20vh;
+        min-width: 5vh;
         height: auto;
         margin: 0.5em;
         -webkit-box-flex: 0;
         -ms-flex-positive: 0;
         flex-grow: 0;
     }
-}
 
+    .page section main{
+        padding: 0;
+    }
+}

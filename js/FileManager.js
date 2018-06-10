@@ -2,6 +2,7 @@
 
 class FileManager{
 
+    //Asynchronous
     static getLevels(main){
         console.log("Getting Levels");
         if (navigator.onLine !== true)

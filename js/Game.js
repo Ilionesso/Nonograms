@@ -21,6 +21,7 @@ class Game{
         this.drawer.drawGameFrame();
     }
 
+    //Look what is declaration squares in the model
     initDeclarationSquaresListeners(){
         let squares = document.querySelectorAll(".declarationSquare");
         squares.forEach(square => {
